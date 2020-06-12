@@ -1,9 +1,15 @@
 package com.luv2code.springdemo.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Course {
 
+	
 	private int id;
 	
+	@NotNull(message="is Required")
+	@Size(min=3, message="Minumum 3 characters required")
 	private String title;
 	
 	private Instructor instructor;
@@ -49,7 +55,4 @@ public class Course {
 		return "Course [id=" + id + ", title=" + title + ", instructor=" + instructor + "]";
 	}
 
-	
-
-	
 }
